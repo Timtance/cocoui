@@ -110,33 +110,6 @@ package coco.component
 		
 		
 		//--------------------------------
-		// 字体缩放
-		//--------------------------------
-		private var _fontScale:Number = CocoUI.fontScale;
-		
-		/**
-		 * 字体缩放
-		 * @return
-		 */
-		public function get fontScale():Number
-		{
-			return _fontScale;
-		}
-		
-		public function set fontScale(value:Number):void
-		{
-			if (_fontScale == value)
-				return;
-			
-			_fontScale = value;
-			formatChanged = true;
-			invalidateProperties();
-			invalidateSize();
-			invalidateDisplayList();
-		}
-		
-		
-		//--------------------------------
 		// 字体颜色
 		//--------------------------------
 		private var _color:uint = CocoUI.fontColor;
@@ -1107,7 +1080,7 @@ package coco.component
 			if (formatChanged && !useHtmlText)
 			{
 				var format:TextFormat = textDisplay.defaultTextFormat;
-				format.size = fontSize * fontScale;
+				format.size = fontSize;
 				format.color = color;
 				format.align = textAlign;
 				format.font = fontFamily;

@@ -3,8 +3,6 @@ package coco.component
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
-	import mx.utils.StringUtil;
-	
 	import coco.core.coco;
 	import coco.event.UIEvent;
 	import coco.manager.PopUpManager;
@@ -206,7 +204,7 @@ package coco.component
 				addChild(okButton);
 			}
 			
-			if (title && StringUtil.trim(title) != "")
+			if (title && title != "")
 			{
 				titleDisplay = new Label();
 				titleDisplay.addEventListener(UIEvent.RESIZE, child_resizeHandler);
