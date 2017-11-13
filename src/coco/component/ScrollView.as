@@ -14,6 +14,11 @@ package coco.component
 	
 	[Event(name="dragRefresh", type="coco.event.DragEvent")]
 	
+	[Event(name="pageBegin", type="coco.event.DragEvent")]
+	
+	[Event(name="pageEnd", type="coco.event.DragEvent")]
+	
+	
 	/**
 	 * 抽象滚动类 不要手动实例此类
 	 * 

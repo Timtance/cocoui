@@ -46,6 +46,11 @@ package coco.util
 		 */        
 		public static var fontSize:int = 12;
 		/**
+		 * 字体缩放 默认 1 
+		 */		
+		public static var fontScale:Number = 1;
+		
+		/**
 		 * 字体厚度 默认 细体
 		 */        
 		public static var fontBold:Boolean = false;

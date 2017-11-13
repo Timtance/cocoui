@@ -374,12 +374,19 @@ package coco.helper
 				{
 					var newPage:int = horizontalVelocity > 0 ? (mouseDownHorizontalPage -1) : (mouseDownHorizontalPage + 1);
 					if (newPage > horizontalMaxPage)
-						newPage = horizontalMaxPage;
-					if (newPage < 1)
-						newPage = 1;
-					
-					//					debug("[ScrollHelper] Horizontal Page: " + newPage);
-					throwHorizontalScrollPosition(newPage * scrollView.minHorizontalScrollPosition, pageDuration, pageEase);
+					{
+						// 翻页结束
+						scrollView.dispatchEvent(new DragEvent(DragEvent.PAGE_END));
+					}
+					else if (newPage < 1)
+					{
+						// 翻到首页超出范围
+						scrollView.dispatchEvent(new DragEvent(DragEvent.PAGE_BEGIN));
+					}
+					else
+					{
+						throwHorizontalScrollPosition(newPage * scrollView.minHorizontalScrollPosition, pageDuration, pageEase);
+					}
 				}
 				else
 				{
@@ -485,12 +492,18 @@ package coco.helper
 				{
 					var newPage:int = verticalVelocity > 0 ? (mouseDownVerticalPage -1) : (mouseDownVerticalPage + 1);
 					if (newPage > verticalMaxPage)
-						newPage = verticalMaxPage;
-					if (newPage < 1)
-						newPage = 1;
-					
-					//					debug("[ScrollHelper] Vertical Page: " + newPage);
-					throwVerticalScrollPosition(newPage * scrollView.minVerticalScrollPosition, pageDuration, pageEase);
+					{
+						scrollView.dispatchEvent(new DragEvent(DragEvent.PAGE_END));
+					}
+					else if (newPage < 1)
+					{
+						scrollView.dispatchEvent(new DragEvent(DragEvent.PAGE_BEGIN));
+					}
+					else
+					{
+						//					debug("[ScrollHelper] Vertical Page: " + newPage);
+						throwVerticalScrollPosition(newPage * scrollView.minVerticalScrollPosition, pageDuration, pageEase);
+					}
 				}
 				else
 				{

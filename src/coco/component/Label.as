@@ -1080,7 +1080,7 @@ package coco.component
 			if (formatChanged && !useHtmlText)
 			{
 				var format:TextFormat = textDisplay.defaultTextFormat;
-				format.size = fontSize;
+				format.size = fontSize * CocoUI.fontScale;
 				format.color = color;
 				format.align = textAlign;
 				format.font = fontFamily;

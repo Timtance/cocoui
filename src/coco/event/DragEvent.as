@@ -20,6 +20,18 @@ package coco.event
 		 */		
 		public static const DRAG_REFRESH:String = "dragRefresh";
 		
+		/**
+		 * 使用翻页布局 翻到尾页结束的时候派发 
+		 */		
+		public static const PAGE_BEGIN:String = "pageBegin";
+		
+		/**
+		 * 使用翻页布局 翻到首页超出的时候派发 
+		 */
+		public static const PAGE_END:String = "pageEnd";
+		
+		
+		
 		public function DragEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)
 		{
 			super(type, bubbles, cancelable);
