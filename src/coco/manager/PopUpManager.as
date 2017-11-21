@@ -1,9 +1,9 @@
 package coco.manager
 {
-	import flash.display.DisplayObject;
-	
 	import coco.core.Application;
 	import coco.core.coco;
+	
+	import flash.display.DisplayObject;
 	
 	use namespace coco;
 	
