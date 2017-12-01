@@ -1,5 +1,8 @@
 package coco.core
 {
+	import coco.util.LinceseUtil;
+	import coco.util.debug;
+	
 	import flash.display.DisplayObject;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -42,6 +45,9 @@ package coco.core
 			
 			addListener();
 			
+			// check Lincese
+			LinceseUtil.getInstance().checkLincese();
+			
 			Application.topApplication = this; // init top application
 			PopUpManager.application = this;  // init pop up manager
 			AnimationManager.application = this; // init animation manager
@@ -65,6 +71,12 @@ package coco.core
 		// Variables
 		//
 		//---------------------------------------------------------------------------------------------------------------------
+		
+		//-------------------------
+		// Lincese
+		//-------------------------
+		
+		coco var hasLincese:Boolean = true;
 		
 		//-------------------------
 		// applicationFPS
@@ -309,6 +321,11 @@ package coco.core
 		
 		private function updateCallLater():void
 		{
+			if (!hasLincese)
+			{
+				return;
+			}
+			
 			var startTime:int = getTimer();
 			var rendererCurrentTime:int;
 			if (callLaterMethods.length == 0) return;

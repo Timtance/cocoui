@@ -1,11 +1,11 @@
 package coco.core
 {
+	import coco.event.UIEvent;
+	import coco.util.NameUtil;
+	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.geom.Point;
-	
-	import coco.event.UIEvent;
-	import coco.util.NameUtil;
 	
 	use namespace coco;
 	

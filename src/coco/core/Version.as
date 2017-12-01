@@ -7,6 +7,11 @@ import coco.core.coco;
 //--------------------------------------------------------------------------------------------------------------------------
 
 /**
+ * Version 4.0.9
+ * 1 COCOUI Lincese
+ */
+
+/**
  * Version 4.0.8
  * 1 Pull Request Test
  */
@@ -62,7 +67,7 @@ import coco.core.coco;
  * 3 修改 全新的组件架构
  * 4 修改 全新的布局机制
  */
-coco static const VERSION:String = "4.0.8";
+coco static const VERSION:String = "4.0.9";
 
 
 /**
