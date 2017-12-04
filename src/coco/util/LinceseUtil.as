@@ -5,6 +5,7 @@ package coco.util
 	
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
+	import flash.events.SecurityErrorEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
@@ -36,6 +37,7 @@ package coco.util
 			linceseLoader = new URLLoader();
 			linceseLoader.addEventListener(Event.COMPLETE, linceseLoader_completeHandler);
 			linceseLoader.addEventListener(IOErrorEvent.IO_ERROR, linceseLoader_errorHandler);
+			linceseLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, linceseLoader_securityErrorHandler);
 			linceseLoader.load(new URLRequest("http://www.hefeixiaomu.com/cocoui/lincese.json"));
 		}
 		
@@ -58,6 +60,11 @@ package coco.util
 			{
 				debug("解析COCOUI授权信息失败");
 			}
+		}
+		
+		private function linceseLoader_securityErrorHandler(e:SecurityErrorEvent):void
+		{
+			debug("获取COCOUI授权信息失败-沙箱问题");
 		}
 		
 		
