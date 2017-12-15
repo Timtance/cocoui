@@ -45,12 +45,12 @@ package coco.core
 			
 			addListener();
 			
-			// check Lincese
-			LinceseUtil.getInstance().checkLincese();
-			
 			Application.topApplication = this; // init top application
 			PopUpManager.application = this;  // init pop up manager
 			AnimationManager.application = this; // init animation manager
+			
+			// check lincese
+			LinceseUtil.getInstance().checkLincese();
 		}
 		
 		
