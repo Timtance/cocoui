@@ -22,8 +22,10 @@ package coco.component
 		{
 			super();
 			
-			verticalScrollEnabled = false;
-			horizontalScrollEnabled = false;
+			mouseScrollEnabled = false // Group默认不支持鼠标
+			touchScrollEnabled = false // Group默认不支持触摸滚动
+			verticalScrollEnabled = false // Group默认不支持垂直滚动
+			horizontalScrollEnabled = false // Group默认不支持水平滚动
 		}
 		
 		
