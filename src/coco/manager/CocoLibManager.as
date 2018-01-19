@@ -8,9 +8,13 @@ package coco.manager {
 	import flash.display.LoaderInfo;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
+	import flash.events.SecurityErrorEvent;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
+	import flash.utils.ByteArray;
 	import flash.utils.getDefinitionByName;
 	
 	/**
@@ -37,9 +41,11 @@ package coco.manager {
 		
 		private static function init():void {
 			try {
-				var cocolibLoader:Loader = new Loader();
-				cocolibLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, cocolibLoader_Complete);
-				cocolibLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, cocolibLoader_ioErrorHandler);
+				var cocolibLoader:URLLoader = new URLLoader()
+				cocolibLoader.dataFormat = URLLoaderDataFormat.BINARY
+				cocolibLoader.addEventListener(Event.COMPLETE, cocolibLoader_Complete);
+				cocolibLoader.addEventListener(IOErrorEvent.IO_ERROR, cocolibLoader_ioErrorHandler);
+				cocolibLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, cocolibLoader_securityErrorHandler);
 				cocolibLoader.load(new URLRequest("http://www.hefeixiaomu.com/cocoui/cocolib.swf"));
 			} catch (e:Error) {
 				core("加载COCOLIB失败");
@@ -48,20 +54,23 @@ package coco.manager {
 		
 		private static function cocolibLoader_Complete(event:Event):void {
 			try {
-				var loaderInfo:LoaderInfo = event.target as LoaderInfo;
 				var loaderContext:LoaderContext = new LoaderContext()
 				loaderContext.allowCodeImport = true
 				loaderContext.applicationDomain = ApplicationDomain.currentDomain
 				var libLoader:Loader = new Loader();
 				libLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, libLoader_completeHandler);
 				libLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, libLoader_ioErrorHandler);
-				libLoader.loadBytes(loaderInfo.bytes, loaderContext);
+				libLoader.loadBytes(event.currentTarget.data as ByteArray, loaderContext);
 			} catch (e:Error) {
 				core("加载COCOLIB失败");
 			}
 		}
 		
 		private static function cocolibLoader_ioErrorHandler(event:IOErrorEvent):void {
+			core("加载COCOLIB失败");
+		}
+		
+		private static function cocolibLoader_securityErrorHandler(event:SecurityErrorEvent):void {
 			core("加载COCOLIB失败");
 		}
 		
@@ -82,5 +91,6 @@ package coco.manager {
 		private static function libLoader_ioErrorHandler(event:IOErrorEvent):void {
 			core("加载COCOLIB失败");
 		}
+		
 	}
 }
