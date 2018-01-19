@@ -7,6 +7,11 @@ import coco.core.coco;
 //--------------------------------------------------------------------------------------------------------------------------
 
 /**
+ * Version 4.1.0
+ * 1 COCOLIB Support
+ */
+
+/**
  * Version 4.0.9
  * 1 COCOUI Lincese
  */
@@ -67,7 +72,7 @@ import coco.core.coco;
  * 3 修改 全新的组件架构
  * 4 修改 全新的布局机制
  */
-coco static const VERSION:String = "4.0.9";
+coco static const VERSION:String = "4.1.0";
 
 
 /**

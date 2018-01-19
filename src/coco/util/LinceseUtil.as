@@ -9,8 +9,6 @@ package coco.util
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
-	use namespace coco;
-	
 	[ExcludeClass]
 	public class LinceseUtil
 	{
@@ -43,12 +41,12 @@ package coco.util
 		
 		private function linceseLoader_errorHandler(event:IOErrorEvent):void
 		{
-			debug("获取COCOUI授权信息失败");
+			core("获取COCOUI授权信息失败");
 		}
 		
 		private function linceseLoader_completeHandler(event:Event):void
 		{
-			debug("获取COCOUI授权信息成功");
+			core("获取COCOUI授权信息成功");
 			
 			try
 			{
@@ -58,13 +56,13 @@ package coco.util
 			}
 			catch (e:Error)
 			{
-				debug("解析COCOUI授权信息失败");
+				core("解析COCOUI授权信息失败");
 			}
 		}
 		
 		private function linceseLoader_securityErrorHandler(e:SecurityErrorEvent):void
 		{
-			debug("获取COCOUI授权信息失败-沙箱问题");
+			core("获取COCOUI授权信息失败-沙箱问题");
 		}
 		
 		
