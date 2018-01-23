@@ -5,7 +5,6 @@ package coco.manager {
 	import coco.util.core;
 	
 	import flash.display.Loader;
-	import flash.display.LoaderInfo;
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
 	import flash.events.SecurityErrorEvent;
