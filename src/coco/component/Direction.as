@@ -1,5 +1,6 @@
 package coco.component
 {
+	[ExcludeClass]
 	public class Direction
 	{
 		public function Direction()

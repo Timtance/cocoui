@@ -128,11 +128,11 @@ package coco.util
 		/**
 		 * 主题背景色 
 		 */		
-		public static var themeBackgroundColor:int = 0xFFFBF0;
+		public static var themeBackgroundColor:int = 0xFFFFFF;
 		/**
 		 * 主题背景选中色 
 		 */		
-		public static var themeBackgroundColorSelected:uint = 0xFFFFFF;
+		public static var themeBackgroundColorSelected:uint = 0x498AE9;
 		/**
 		 * 主题背景透明度
 		 */		
@@ -140,7 +140,7 @@ package coco.util
 		/**
 		 * 主题边框色 
 		 */		
-		public static var themeBorderColor:uint = 0xEEE6C9;
+		public static var themeBorderColor:uint = 0xDDDEE1;
 		/**
 		 * 主题边框透明度
 		 */		
