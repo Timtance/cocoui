@@ -7,6 +7,11 @@ import coco.core.coco;
 //--------------------------------------------------------------------------------------------------------------------------
 
 /**
+ * Version 4.1.1
+ * 1 Remove License Check
+ */
+
+/**
  * Version 4.1.0
  * 1 COCOLIB Support
  */
@@ -72,7 +77,7 @@ import coco.core.coco;
  * 3 修改 全新的组件架构
  * 4 修改 全新的布局机制
  */
-coco static const VERSION:String = "4.1.0";
+coco static const VERSION:String = "4.1.1";
 
 
 /**

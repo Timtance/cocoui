@@ -1,14 +1,14 @@
 package coco.component
 {
+	import coco.core.coco;
+	import coco.manager.IToolTip;
+	import coco.util.CocoUI;
+	
 	import flash.text.AntiAliasType;
 	import flash.text.GridFitType;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
-	
-	import coco.core.coco;
-	import coco.manager.IToolTip;
-	import coco.util.CocoUI;
 	
 	/**
 	 * 文本组件

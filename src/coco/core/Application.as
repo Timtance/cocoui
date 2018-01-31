@@ -7,7 +7,6 @@ package coco.core {
 	import coco.manager.PopUpManager;
 	import coco.util.CocoUI;
 	import coco.util.DPIUtil;
-	import coco.util.LinceseUtil;
 	import coco.util.Platform;
 	import coco.util.core;
 	
@@ -45,9 +44,6 @@ package coco.core {
 			CocoLibManager.application = this   // init coco lib manager
 			PopUpManager.application = this;  // init pop up manager
 			AnimationManager.application = this; // init animation manager
-			
-			// check lincese
-			LinceseUtil.getInstance().checkLincese();
 		}
 		
 		
