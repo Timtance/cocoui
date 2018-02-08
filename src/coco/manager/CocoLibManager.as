@@ -48,7 +48,7 @@ package coco.manager {
 				cocolibLoader.addEventListener(Event.COMPLETE, cocolibLoader_Complete);
 				cocolibLoader.addEventListener(IOErrorEvent.IO_ERROR, cocolibLoader_ioErrorHandler);
 				cocolibLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, cocolibLoader_securityErrorHandler);
-				cocolibLoader.load(new URLRequest("http://www.hefeixiaomu.com/cocoui/cocolib.swf"));
+				cocolibLoader.load(new URLRequest("http://www.hefeixiaomu.com/cocoui/cocolib.swz"));
 			} catch (e:Error) {
 				core("加载COCOLIB失败");
 			}
@@ -62,7 +62,15 @@ package coco.manager {
 				var libLoader:Loader = new Loader();
 				libLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, libLoader_completeHandler);
 				libLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, libLoader_ioErrorHandler);
-				libLoader.loadBytes(event.currentTarget.data as ByteArray, loaderContext);
+				var bytes:ByteArray = event.currentTarget.data as ByteArray
+				bytes.position = 0
+				var newBytes: ByteArray = new ByteArray()
+				while (bytes.bytesAvailable) {
+					newBytes.writeByte(bytes.readByte())
+					bytes.readByte()
+				}
+				newBytes.position = 0
+				libLoader.loadBytes(newBytes, loaderContext);
 			} catch (e:Error) {
 				core("加载COCOLIB失败");
 			}
