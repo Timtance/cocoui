@@ -2,6 +2,7 @@ package coco.manager {
 	
 	import coco.core.Application;
 	import coco.core.coco;
+	import coco.util.CocoUI;
 	import coco.util.core;
 	
 	import flash.display.Loader;
@@ -35,7 +36,9 @@ package coco.manager {
 			if (!_application)
 				_application = value;
 			
-			init()
+			if (CocoUI.coco::useCocoLib) {
+				init()
+			}
 		}
 		
 		private static function init():void {

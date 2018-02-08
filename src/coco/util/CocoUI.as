@@ -1,7 +1,6 @@
 package coco.util
 {
 	import flash.text.TextFormatAlign;
-	
 	import coco.core.coco;
 	
 	use namespace coco;
@@ -177,6 +176,11 @@ package coco.util
 		 * 总的实例数目 
 		 */        
 		coco static var instanceCounter:int = 0;
+		
+		/**
+		 * 是否使用CocoLib
+		 * */
+		coco static var useCocoLib:Boolean = true;
 		
 		/**
 		 * 是否使用调试信息输出</br>
