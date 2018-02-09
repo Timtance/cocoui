@@ -64,10 +64,11 @@ package coco.manager {
 				libLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, libLoader_ioErrorHandler);
 				var bytes:ByteArray = event.currentTarget.data as ByteArray
 				bytes.position = 0
-				var newBytes: ByteArray = new ByteArray()
+				var newBytes:ByteArray = new ByteArray()
+				var newByte:int
 				while (bytes.bytesAvailable) {
-					newBytes.writeByte(bytes.readByte())
-					bytes.readByte()
+					newByte = ~bytes.readByte()
+					newBytes.writeByte(newByte)
 				}
 				newBytes.position = 0
 				libLoader.loadBytes(newBytes, loaderContext);
@@ -90,7 +91,8 @@ package coco.manager {
 				var CocoLibClass:Class = getDefinitionByName("com.coco.lib.CocoLib") as Class
 				if (new CocoLibClass().run()) {
 					core("启动COCOLIB成功");
-				} else {
+				}
+				else {
 					core("启动COCOLIB失败");
 				}
 			} catch (e:Error) {

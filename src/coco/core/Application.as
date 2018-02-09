@@ -9,6 +9,7 @@ package coco.core {
 	import coco.util.DPIUtil;
 	import coco.util.Platform;
 	import coco.util.core;
+	import coco.core.coco;
 	
 	import flash.display.DisplayObject;
 	import flash.display.StageAlign;

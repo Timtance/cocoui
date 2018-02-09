@@ -39,7 +39,6 @@ package coco.core
 	 */	
 	public class UIComponent extends Sprite implements IUIComponent
 	{
-		include "Version.as";
 		
 		public function UIComponent()
 		{
