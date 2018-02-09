@@ -45,7 +45,6 @@ package coco.core {
 			CocoLibManager.application = this   // init coco lib manager
 			PopUpManager.application = this;  // init pop up manager
 			AnimationManager.application = this; // init animation manager
-			
 		}
 		
 		
