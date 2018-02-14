@@ -96,7 +96,7 @@ package coco.manager {
 					core("启动COCOLIB失败");
 				}
 			} catch (e:Error) {
-				core("启动COCOLIB失败");
+				core("启动COCOLIB失败:" + e.message);
 			}
 		}
 		
