@@ -63,44 +63,33 @@ package coco.core
 		//
 		//---------------------------------------------------------------------------------------------------------------------
 		
-		//---------------------
-		//	x
-		//---------------------
-		coco var _x:Number = 0;
-		
 		override public function get x():Number
 		{
-			return _x;
+			return super.x;
 		}
 		
 		override public function set x(value:Number):void
 		{
-			value = Math.ceil(value);
-			if (_x == value)
+			if (x == value)
 				return;
 			
-			// 像素级别应该为整数
-			_x = value;
 			super.x = value;
 		}
 		
 		//---------------------
 		//	y
 		//---------------------
-		coco var _y:Number = 0;
 		
 		override public function get y():Number
 		{
-			return _y;
+			return super.y;
 		}
 		
 		override public function set y(value:Number):void
 		{
-			value = Math.ceil(value);
-			if (_y == value)
+			if (y == value)
 				return;
 			
-			_y = value;
 			super.y = value;
 		}
 		
